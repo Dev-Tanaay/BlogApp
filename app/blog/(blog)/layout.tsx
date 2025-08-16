@@ -1,20 +1,17 @@
 "use client";
-import { Metadata } from "next";
-import "./globals.css";
-import { SessionProvider } from "next-auth/react";
 
+import Header from "@/components/BlogHeader";
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className="bg-[#090D1F] text-[#FFFFFF]">
-        <SessionProvider>
-          {children}
-        </SessionProvider>
+        <Header />
+        <main className="pt-24 px-6">{children}</main>
       </body>
     </html>
   );

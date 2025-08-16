@@ -8,7 +8,8 @@ export interface ITag extends Document{
 const tagSchema:Schema<ITag>=new Schema({
     name:{
         type:String,
-        trim:true
+        trim:true,
+        required:true
     }
 },{
     timestamps:true

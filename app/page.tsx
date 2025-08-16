@@ -1,7 +1,16 @@
-export default function Home(){
-  return (
-    <div className="flex items-center justify-center h-screen">
-      <h1 className="text-purple-500 font-semibold text-8xl">Hello Tanay!</h1>
-    </div>
-  );
+"use client";
+import Header from "@/components/Header";
+import { useRouter } from "next/navigation";
+
+export default function Page(){
+  const router=useRouter();
+  const handleSignIn=()=>{
+    router.push("/signin");
+  }
+  const handleLoginIn=()=>{
+    router.push("/login");
+  }
+  return(<>
+    <Header handleSignIn={handleSignIn} handleLoginIn={handleLoginIn}/>
+  </>);
 }
